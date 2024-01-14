@@ -17,7 +17,7 @@ export default function NavbarComponent() {
     <Navbar isBordered>
       <NavbarContent justify="start">
         <NavbarBrand className="mr-4">
-          <p className="hidden sm:block font-bold text-inherit">ACME</p>
+          <p className="hidden sm:block font-bold text-inherit">Tri-petch Demo</p>
         </NavbarBrand>
         <NavbarContent className="hidden sm:flex gap-3">
           <NavbarItem>
