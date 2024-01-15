@@ -1,85 +1,37 @@
 import React from "react";
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  Link,
-  Input,
-  DropdownItem,
-  DropdownTrigger,
-  Dropdown,
-  DropdownMenu,
-  Avatar,
-} from "@nextui-org/react";
-export default function NavbarComponent() {
-  return (
-    <Navbar isBordered>
-      <NavbarContent justify="start">
-        <NavbarBrand className="mr-4">
-          <p className="hidden sm:block font-bold text-inherit">Tri-petch Demo</p>
-        </NavbarBrand>
-        <NavbarContent className="hidden sm:flex gap-3">
-          <NavbarItem>
-            <Link color="foreground" href="#">
-              Features
-            </Link>
-          </NavbarItem>
-          <NavbarItem isActive>
-            <Link href="#" aria-current="page" color="secondary">
-              Customers
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link color="foreground" href="#">
-              Integrations
-            </Link>
-          </NavbarItem>
-        </NavbarContent>
-      </NavbarContent>
 
-      <NavbarContent as="div" className="items-center" justify="end">
-        <Input
-          classNames={{
-            base: "max-w-full sm:max-w-[10rem] h-10",
-            mainWrapper: "h-full",
-            input: "text-small",
-            inputWrapper:
-              "h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20",
-          }}
-          placeholder="Type to search..."
-          size="sm"
-          type="search"
-        />
-        <Dropdown placement="bottom-end">
-          <DropdownTrigger>
-            <Avatar
-              isBordered
-              as="button"
-              className="transition-transform"
-              color="secondary"
-              name="Jason Hughes"
-              size="sm"
-              src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
-            />
-          </DropdownTrigger>
-          <DropdownMenu aria-label="Profile Actions" variant="flat">
-            <DropdownItem key="profile" className="h-14 gap-2">
-              <p className="font-semibold">Signed in as</p>
-              <p className="font-semibold">zoey@example.com</p>
-            </DropdownItem>
-            <DropdownItem key="settings">My Settings</DropdownItem>
-            <DropdownItem key="team_settings">Team Settings</DropdownItem>
-            <DropdownItem key="analytics">Analytics</DropdownItem>
-            <DropdownItem key="system">System</DropdownItem>
-            <DropdownItem key="configurations">Configurations</DropdownItem>
-            <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
-            <DropdownItem key="logout" color="danger">
-              Log Out
-            </DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
-      </NavbarContent>
-    </Navbar>
+import { Menu } from "lucide-react";
+
+
+export default function NavbarComponent({title}) {
+  return (
+    <div
+      style={{
+        position: "fixed",
+        top: 0,
+        right: 0,
+        width: "100vw",
+        padding: "20px",
+        marginBottom: "20px",
+      }}
+    >
+      <div className="flex justify-between">
+        <div className="flex items-center">
+          <Menu size={32} />
+          {title ?(
+          <h1 className="text-white text-xl  ml-2">{title}</h1>
+          ):null}
+
+        </div>
+        <div className="flex align-baseline bg-gray-200 rounded-full h-fit pe-2">
+          <img
+            src="/images/coin.png"
+            alt="avatar"
+            className="rounded-full w-6 h-6"
+          />
+          <p className="text-black text-md ml-1">1000</p>
+        </div>
+      </div>
+    </div>
   );
 }

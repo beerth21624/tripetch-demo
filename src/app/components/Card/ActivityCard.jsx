@@ -1,35 +1,38 @@
 import React from 'react'
+import {
+  Card,
+  CardHeader,
+  Image,
+} from "@nextui-org/react";
 
-const ActivityCard = () => {
+
+const ActivityCard = ({ title, subtitle, imageSrc }) => {
+
   return (
-    <article className="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg">
-      <img
-        alt="Office"
-        src="https://images.unsplash.com/photo-1503435980610-a51f3ddfee50?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        className="absolute inset-0 h-full w-full object-cover"
-      />
-
-      <div className="relative bg-gradient-to-t from-gray-900/50 to-gray-900/25 pt-32 sm:pt-48 lg:pt-64">
-        <div className="p-4 sm:p-6">
-          <time datetime="2022-10-10" className="block text-xs text-white/90">
-            {" "}
-            10th Oct 2022{" "}
-          </time>
-
-          <a href="#">
-            <h3 className="mt-0.5 text-lg text-white">
-              โครงการปลูกป่า 1 ล้านต้น
-            </h3>
-          </a>
-
-          <p className="mt-2 line-clamp-3 text-sm/relaxed text-white/95">
-            โครงการปลูกป่า 1 ล้านต้น โดยมีวัตถุประสงค์เพื่อเพิ่มพื้นที่ป่าไม้
-            และ ปรับปรุงสภาพอากาศ ให้กับโลกใบนี้
-          </p>
+    <Card className="col-span-12 sm:col-span-4 min-w-[320px] drop-shadow-md">
+      <CardHeader className="absolute z-10 bottom-1 right-1 flex-col items-end justify-between h-full">
+        <div className="flex flex-col ">
+          <p className="text-md text-white/80 uppercase font-bold">{title}</p>
+          <div className="flex flex-row gap-1 justify-end">
+            <img
+              src="/images/coin.png"
+              alt="avatar"
+              className="rounded-full w-4 h-4"
+            />
+            <p className="text-xs text-white/80 uppercase font-bold">40</p>
+          </div>
         </div>
-      </div>
-    </article>
+        <h4 className="text-white font-medium text-md text-end">{subtitle}</h4>
+      </CardHeader>
+      <Image
+        removeWrapper
+        alt="Card background"
+        className="z-0 w-full h-full object-cover filter brightness-50"
+        src={imageSrc}
+      />
+    </Card>
   );
-}
+};
 
 export default ActivityCard
+
