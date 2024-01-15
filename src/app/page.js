@@ -12,15 +12,14 @@ import { useEffect } from 'react'
 
 export default function Home() {
 
-  // useEffect(() => {
-  //   Swal.fire({
-  //     title: "อยู่ระหว่างการพัฒนา",
-  //     text: "ระบบนี้ยังไม่สามารถใช้งานได้ในขณะนี้ กรุณากลับมาใหม่อีกครั้งในภายหลัง",
-  //     icon: "warning",
-  //     allowOutsideClick: false,showConfirmButton: false,
-  //   });
-  // }
-  // , [])
+  useEffect(() => {
+    Swal.fire({
+      title: "อยู่ระหว่างการพัฒนา",
+      text: "ระบบกำลังอยู่ในช่วงการพัฒนา โปรดรอการปรับปรุงเพิ่มเติม",
+      icon: "warning",
+    });
+  }
+  , [])
 
   return (
     <NextUIProvider>
