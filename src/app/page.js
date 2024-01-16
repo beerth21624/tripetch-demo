@@ -19,7 +19,8 @@ import {
     BookOpenText,
     Rocket,
   Building2,
-  BarChart4
+  BarChart4,
+  User, MessagesSquare
 } from "lucide-react";
 
 export default function Home() {
@@ -37,11 +38,16 @@ export default function Home() {
     { icon: <Rocket size={32} />, text: "Dairy", path: "/dairy" },
     { icon: <Activity size={32} />, text: "Activity", path: "/activity" },
     { icon: <CalendarCheck size={32} />, text: "Event", path: "/event" },
-    { icon: <BookOpenText size={32} />, text: "Knowledge", path: "/knowledge" },
+    { icon: <MessagesSquare size={32} />, text: "News&Tips", path: "/news" },
     { icon: <Gift size={32} />, text: "Reward", path: "/reward" },
     { icon: <Calculator size={32} />, text: "Calculate", path: "/calculate" },
     { icon: <BarChart4 size={32} />, text: "Ranking", path: "/ranking" },
     { icon: <Building2 />, text: "Organization", path: "/organization" },
+    { icon: <BookOpenText size={32} />, text: "Knowledge", path: "/knowledge" },
+    { icon: <User />, text: "Profile", path: "/profile" },
+    //ส่งต่อ
+    //แชร์รถ
+    //สินค้า
   ];
   return (
     <NextUIProvider>
