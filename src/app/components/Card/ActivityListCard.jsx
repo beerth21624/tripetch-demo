@@ -9,7 +9,7 @@ const ActivityListCard = ({
   coinRange,
 }) => {
   return (
-    <article className="rounded-lg bg-[#57A87D] p-4 shadow-md transition hover:shadow-lg sm:p-6">
+    <article className="rounded-lg bg-[#57A87D] p-4 shadow-md transition hover:shadow-lg sm:p-6 w-full">
       <a href="#">
         <h3 className="mt-0.5 text-md font-medium text-while-900">{title}</h3>
       </a>

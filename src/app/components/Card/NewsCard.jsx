@@ -20,7 +20,7 @@ const NewsCard = () => {
             หากได้รับอย่างต่อเนื่องวันที่ 23 พ.ย. 2566 นายแพทย์วีรวุฒิ อิ่มสำราญ
             รองอธิบดีกรมการแพทย์ เผยว่า ฝุ่นละออง PM 2.5
           </p>
-          <p className="text-end text-xs font-extralight">อ่านต่อ</p>
+          {/* <p className="text-end text-xs font-extralight">อ่านต่อ</p> */}
         </div>
       </div>
     </div>

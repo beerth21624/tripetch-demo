@@ -1,7 +1,9 @@
 import React from 'react';
 import { Button } from "flowbite-react";
+import { useRouter } from 'next/navigation';
 
 const KnowledgeCard = ({ imageUrl, source, title, date, readMoreLink }) => {
+    const router = useRouter();
   return (
     <article className="rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg sm:p-6 flex items-start gap-2">
       <div className="flex flex-col">
@@ -23,7 +25,11 @@ const KnowledgeCard = ({ imageUrl, source, title, date, readMoreLink }) => {
             <p className=" text-xs/relaxed text-green-500 ml-2">+10</p>
           </div>
         </div>
-        <Button size="xs" gradientMonochrome="success">
+        <Button size="xs" gradientMonochrome="success" 
+        onClick={()=>{
+          router.push(readMoreLink)   
+        }}     
+        >
           เริ่มต้นเรียนรู้
         </Button>
       </div>

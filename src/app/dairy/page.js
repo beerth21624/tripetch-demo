@@ -5,6 +5,8 @@ import { NextUIProvider } from "@nextui-org/react";
 
 import NavbarComponent from "../components/Navbar/NavbarComponent";
 import DairyCard from "./DairyCard";
+import ThankCard from "../components/ThankCard/ThankCard";
+import GoBackButton from "../components/GoBackButton";
 
 const page = () => {
   function getDate() {
@@ -97,7 +99,12 @@ const page = () => {
                         />
                     ))}
                   </div>
+                      <div className="flex justify-start w-[100vw] px-5 mt-5">
+                          <GoBackButton path="/" />
+                      </div>
         </div>
+ 
+        <ThankCard />
       </div>
       {/* <BottomBar /> */}
     </NextUIProvider>

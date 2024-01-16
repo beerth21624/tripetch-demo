@@ -4,6 +4,7 @@ const CarbonAndCoin = ({
     isCoin = true,
     isCarbon = true,
     haveBg = true,
+    coin = 20,
 }) => {
   return (
     <div className={`flex gap-2 ${haveBg?'bg-white':''} py-1 px-2 rounded-full`}>
@@ -24,7 +25,7 @@ const CarbonAndCoin = ({
           alt="avatar"
           className="rounded-full w-5 h-5"
         />
-        <p className="text-[#C08A00] text-sm">20</p>
+        <p className="text-[#C08A00] text-sm">{coin}</p>
       </div>
         ) : null}
     </div>

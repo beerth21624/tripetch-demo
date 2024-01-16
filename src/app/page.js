@@ -9,6 +9,7 @@ import NewsCard from './components/Card/NewsCard'
 import RewardRecommendCard from './components/Card/RewardRecommendCard'
 import MenuBar from './components/MenuBar/MenuBar';
 import Swal from 'sweetalert2'
+import ThankCard from "./components/ThankCard/ThankCard";
 
 //icons
 import {
@@ -26,11 +27,15 @@ import {
 export default function Home() {
 
   useEffect(() => {
+    if(localStorage.getItem('firstTime') == null){
     Swal.fire({
       title: "อยู่ระหว่างการพัฒนา",
       text: "ระบบกำลังอยู่ในช่วงการพัฒนา โปรดรอการปรับปรุงเพิ่มเติม",
       icon: "warning",
     });
+    localStorage.setItem('firstTime',false)
+  }
+
   }
   , [])
 
@@ -38,12 +43,12 @@ export default function Home() {
     { icon: <Rocket size={32} />, text: "Dairy", path: "/dairy" },
     { icon: <Activity size={32} />, text: "Activity", path: "/activity" },
     { icon: <CalendarCheck size={32} />, text: "Event", path: "/event" },
-    { icon: <MessagesSquare size={32} />, text: "News&Tips", path: "/news" },
     { icon: <Gift size={32} />, text: "Reward", path: "/reward" },
+    { icon: <MessagesSquare size={32} />, text: "News&Tips", path: "/news" },
+    { icon: <BookOpenText size={32} />, text: "Knowledge", path: "/knowledge" },
     { icon: <Calculator size={32} />, text: "Calculate", path: "/calculate" },
     { icon: <BarChart4 size={32} />, text: "Ranking", path: "/ranking" },
     { icon: <Building2 />, text: "Organization", path: "/organization" },
-    { icon: <BookOpenText size={32} />, text: "Knowledge", path: "/knowledge" },
     { icon: <User />, text: "Profile", path: "/profile" },
     //ส่งต่อ
     //แชร์รถ
@@ -61,7 +66,6 @@ export default function Home() {
         justifyContent: 'flex-start',
         alignItems: 'center',
         paddingTop: '4vh',
-        paddingBottom: '4vh',
      }}>
 
           <p className='text-white 
@@ -78,6 +82,9 @@ export default function Home() {
             height: '250px',
             marginTop: '-40px',
           }} />
+          <div className="text-center text-black my-2">
+          <p className="text-black text-sm ">Powered by <span className="text-rose-600 font-bold text-md">Tri Petch Group</span></p>
+          </div>
         <MenuBar menuItems={menuItems} />
         <NewsCard />
 
@@ -103,7 +110,7 @@ export default function Home() {
             subtitle="ค่ายฝึกอบรมเยาวชนคนรักษ์ทรัพยากรทางทะเลและชายฝั่ง"
             imageSrc="https://www.dmcr.go.th//upload/nws/album/pic-201712221513933999380.JPG" />
         </div>
-        <div style={{
+        {/* <div style={{
           width: '100vw',
           overflow: 'scroll',
           display: 'flex',
@@ -117,9 +124,13 @@ export default function Home() {
           <RewardRecommendCard />
           <RewardRecommendCard />
           <RewardRecommendCard />
+        </div> */}
+        <div style={{
+          width: '100vw',
+        }}
+        >
+        <ThankCard />
         </div>
-
-
         
      </div>
       {/* <BottomBar /> */}

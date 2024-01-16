@@ -5,6 +5,11 @@ import { NextUIProvider } from "@nextui-org/react";
 
 import NavbarComponent from '../components/Navbar/NavbarComponent'
 import { Progress } from "@nextui-org/react";
+import ThankCard from '../components/ThankCard/ThankCard';
+import GoBackButton from '../components/GoBackButton';
+import { Avatar } from "@nextui-org/react";
+
+
 const page = () => {
     return (
         <NextUIProvider>
@@ -19,9 +24,17 @@ const page = () => {
                 alignItems: 'center',
             }}>
                 <div className='flex justify-start flex-col gap-4 p-4 items-center bg-gray-100 rounded-t-[20px] w-full min-h-[96vh] '>
+                    <div className="bg-white rounded-xl p-4 w-full mt-2 flex items-center gap-2">
+                        <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" />
+                        <div className="flex flex-col gap-1 ml-2 text-left">
+                            <p className="text-black/75 font-bold text-sm">Sarawut Inpol</p>
+                        </div>
+                    </div>
+
+                    <div className="bg-white rounded-xl p-4 w-full flex flex-col items-center justify-center gap-2">
                     <p className='text-2xl font-semibold text-black '
                     >
-                    level 4
+                  ฉายา
                     </p>
                     <p className='text-lg font-semibold text-black/70 '
                     >
@@ -33,7 +46,7 @@ const page = () => {
                     <p className='text-xs  text-black/75 font-light  '>
                         คุณมีความรู้เกี่ยวกับการลดคาร์บอน พอที่จะสอนคนอื่นได้ แต่ยังขาดความยั่งยืนในการสอน พัฒนาตัวเองเพื่อไประดับต่อไป
                     </p>
-                   
+               </div>
                         
                     <div className='grid grid-cols-2 gap-2 w-full'>
                         <div className='flex flex-col gap-2 w-full align-center justify-center bg-white rounded-md p-4'>
@@ -86,7 +99,10 @@ const page = () => {
                         />
 
                     </div>
-                   
+                        <GoBackButton path="/" />
+                       
+
+                    <ThankCard />
                 </div>
 
             </div>

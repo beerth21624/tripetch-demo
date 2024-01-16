@@ -9,6 +9,8 @@ import { Carousel } from 'flowbite-react';
 import MenuBar from "../components/MenuBar/MenuBar";
 import CarbonAndCoin from "../components/CarbonAndCoin";
 import RewardCard from "./RewardCard";
+import ThankCard from "../components/ThankCard/ThankCard";
+import GoBackButton from "../components/GoBackButton";
 
 
 //icons
@@ -16,6 +18,36 @@ import { Pizza, ShoppingBag, Clapperboard } from "lucide-react";
 
 const page = () => {
 
+    const rewardData = [{
+        title: 'ส่วนลด 15% ',
+        imageUrl: 'https://seeklogo.com/images/C/cafe-amazon-logo-2EB9FB8B31-seeklogo.com.png',
+        isCarbon: false,
+        isCoin: true,
+        haveBg: false,
+        coin: 100,
+    }, {
+            title: 'ส่วนลด 20% ',
+            imageUrl: 'https://seeklogo.com/images/C/cafe-amazon-logo-2EB9FB8B31-seeklogo.com.png',
+            isCarbon: false,
+            isCoin: true,
+            haveBg: false,
+            coin: 130,
+        }, {
+            title: 'ส่วนลด 500 บาท',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Central_logo.svg/1200px-Central_logo.svg.png',
+            isCarbon: false,
+            isCoin: true,
+            haveBg: false,
+            coin: 500,
+        }, {
+            title: 'ส่วนลด 1000 บาท',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Central_logo.svg/1200px-Central_logo.svg.png',
+            isCarbon: false,
+            isCoin: true,
+            haveBg: false,
+            coin: 800,
+        }
+];
 
 
     const menuItems = [
@@ -42,10 +74,9 @@ const page = () => {
                     flexDirection: "column",
                     justifyContent: "flex-start",
                     alignItems: "center",
-                    paddingBottom: '4vh',
                 }}
             >
-                <div className="flex justify-start flex-col gap-4 p-4 items-center bg-gray-100 rounded-t-[20px] w-full min-h-[92vh] ">
+                <div className="flex justify-start flex-col gap-4 p-4 items-center bg-gray-100 rounded-t-[20px] w-full min-h-[100vh] ">
                     <div className="h-44 w-[100vw] p-4 rounded-lg overflow-hidden relative">
                         <div className='
                         absolute
@@ -78,12 +109,18 @@ const page = () => {
                         <MenuBar menuItems={menuItems} />
                     </div>
                     <div className="grid grid-cols-2 gap-4">
-                        <RewardCard />
-                        <RewardCard />
-                        <RewardCard />
-                        <RewardCard />
+                        {rewardData.map((item, index) => (
+                            <RewardCard
+                                key={index}
+                               {...item}
+                            />
+                        ))}
                     </div>
-
+                    <div className="flex justify-center w-[100vw] px-5 mb-2">
+                        <GoBackButton path="/" />
+                       
+                    </div>
+                    <ThankCard />
                 </div>
             </div>
             {/* <BottomBar /> */}
