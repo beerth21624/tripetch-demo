@@ -26,18 +26,18 @@ import {
 
 export default function Home() {
 
-  useEffect(() => {
-    if(localStorage.getItem('firstTime') == null){
-    Swal.fire({
-      title: "อยู่ระหว่างการพัฒนา",
-      text: "ระบบกำลังอยู่ในช่วงการพัฒนา โปรดรอการปรับปรุงเพิ่มเติม",
-      icon: "warning",
-    });
-    localStorage.setItem('firstTime',false)
-  }
+  // useEffect(() => {
+  //   if(localStorage.getItem('firstTime') == null){
+  //   Swal.fire({
+  //     title: "อยู่ระหว่างการพัฒนา",
+  //     text: "ระบบกำลังอยู่ในช่วงการพัฒนา โปรดรอการปรับปรุงเพิ่มเติม",
+  //     icon: "warning",
+  //   });
+  //   localStorage.setItem('firstTime',false)
+  // }
 
-  }
-  , [])
+  // }
+  // , [])
 
   const menuItems = [
     { icon: <Rocket size={32} />, text: "Dairy", path: "/dairy" },
@@ -50,9 +50,6 @@ export default function Home() {
     { icon: <BarChart4 size={32} />, text: "Ranking", path: "/ranking" },
     { icon: <Building2 />, text: "Organization", path: "/organization" },
     { icon: <User />, text: "Profile", path: "/profile" },
-    //ส่งต่อ
-    //แชร์รถ
-    //สินค้า
   ];
   return (
     <NextUIProvider>
@@ -71,7 +68,7 @@ export default function Home() {
           <p className='text-white 
           text-lg
           font-light
-            '>Hello,Sompong </p>
+            '>Hello,Sarawut </p>
   
 
         <p className='text-sm font-thin mt-3'>your carbon saved</p>

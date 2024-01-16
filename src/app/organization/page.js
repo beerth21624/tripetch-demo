@@ -1,5 +1,4 @@
-'use client';
-
+"use client";
 import React from 'react'
 import { NextUIProvider } from "@nextui-org/react";
 
@@ -12,7 +11,8 @@ import GoBackButton from '../components/GoBackButton';
 
 
 
-const page = () => {
+const Organization = () => {
+  
     return (
         <NextUIProvider>
             <NavbarComponent title='Organization' />
@@ -115,10 +115,9 @@ const page = () => {
                    </div>
                 </div>
             </div>
-            {/* <BottomBar /> */}
         </NextUIProvider>
 
     )
 }
 
-export default page
+export default Organization
