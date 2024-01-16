@@ -9,9 +9,12 @@ import { Pagination } from "@nextui-org/react";
 import { Button } from "@nextui-org/react";
 import ThankCard from "../components/ThankCard/ThankCard";
 import GoBackButton from "../components/GoBackButton";
+import ModalActivity from "./ModalActivity";
 //icons
 import { ListFilter } from "lucide-react";
-const page = () => {
+import Swal from "sweetalert2";
+const Activity = () => {
+  const [showModal, setShowModal] = React.useState(false);
   return (
     <NextUIProvider>
       <NavbarComponent title="activities" />
@@ -42,6 +45,7 @@ const page = () => {
             imageSrc="/images/co2.png"
             buttonText="ดูรายละเอียด"
             coinRange="200"
+            setShowModal={setShowModal}
           />
           <ActivityListCard
             title="เข้าร่วมนิทรรศการเปลี่ยนขยะเป็นศิลปะ"
@@ -51,6 +55,7 @@ const page = () => {
             imageSrc="/images/co2.png"
             buttonText="ดูรายละเอียด"
             coinRange="100"
+            setShowModal={setShowModal}
           />
           <ActivityListCard
             title="ลดการใช้น้ำและไฟฟ้า"
@@ -58,6 +63,7 @@ const page = () => {
             imageSrc="/images/co2.png"
             buttonText="ดูรายละเอียด"
             coinRange="400"
+            setShowModal={setShowModal}
           />
           <ActivityListCard
             title="บริจากเสื้อผ้ามือ 2"
@@ -65,6 +71,7 @@ const page = () => {
             imageSrc="/images/co2.png"
             buttonText="ดูรายละเอียด"
             coinRange="300"
+            setShowModal={setShowModal}
           />
           <ActivityListCard
             title="อาสาเพื่อแปรรูปขยะ"
@@ -72,6 +79,7 @@ const page = () => {
             imageSrc="/images/co2.png"
             buttonText="ดูรายละเอียด"
             coinRange="200"
+            setShowModal={setShowModal}
           />
             <div className="flex justify-between w-[100vw] px-5 mb-2">
               <GoBackButton path="/" />
@@ -87,9 +95,21 @@ const page = () => {
 
             <ThankCard />
         </div>
+        <ModalActivity  
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        onSubmit={()=>{
+          setShowModal(false)
+          Swal.fire({
+            title: "สำเร็จ",
+            text: "คุณช่วยลดการปล่อยก๊าซคาร์บอนไดออกไซด์ไป 25 kg",
+            icon: "success",
+          });
+        }}
+        />
       </div>
     </NextUIProvider>
   );
 };
 
-export default page;
+export default Activity ;

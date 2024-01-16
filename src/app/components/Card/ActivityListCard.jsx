@@ -7,6 +7,7 @@ const ActivityListCard = ({
   imageSrc,
   buttonText,
   coinRange,
+  setShowModal,
 }) => {
   return (
     <article className="rounded-lg bg-[#57A87D] p-4 shadow-md transition hover:shadow-lg sm:p-6 w-full">
@@ -22,7 +23,14 @@ const ActivityListCard = ({
           <img src={imageSrc} alt="avatar" className="rounded-full w-6 h-6" />
           <p className="text-[#CDFFD8]">{coinRange}</p>
         </div>
-        <Button radius="sm" size="sm" className="bg-[#CDFFD8]">
+        <Button
+          radius="sm"
+          size="sm"
+          className="bg-[#CDFFD8]"
+          onClick={() => {
+            setShowModal(true);
+          }}
+        >
           {buttonText}
         </Button>
       </div>
